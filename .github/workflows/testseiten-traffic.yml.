@@ -1,0 +1,78 @@
+# Testet die Seite aus dem Ordner site/ mit simulierten Besuchen (Traffic-Engine v2).
+# Läuft alle 15 Minuten in zwei Blöcken (UTC): 7–13 Uhr und 16–19 Uhr. Das deckt die Zeitfenster
+# 9–12, 13–15 und 18–21 Uhr Berliner Zeit in Sommer- und Winterzeit ab. Ob gerade ein Fenster
+# läuft, entscheidet traffic_engine.py anhand von traffic/konfiguration.json (Europe/Berlin).
+name: Testseiten-Traffic
+
+on:
+  schedule:
+    - cron: "7,22,37,52 7-13 * * 1-5"
+    - cron: "7,22,37,52 16-19 * * *"
+  workflow_dispatch:
+    inputs:
+      besuche:
+        description: "Anzahl Besuche bei Handstart"
+        default: "3"
+      reise:
+        description: "Optional: bestimmte Reise (Name aus konfiguration.json)"
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testseiten-traffic
+  cancel-in-progress: false
+
+jobs:
+  besuche:
+    runs-on: ubuntu-24.04  # fest statt ubuntu-latest, bis Playwright neuere Ubuntu-Versionen sicher unterstützt
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: traffic
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Anzahl Besuche bestimmen
+        id: plan
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "n=${{ inputs.besuche }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "n=$(python traffic_engine.py --takt 15 --nur-pruefen)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Browser aus dem Zwischenspeicher holen
+        if: steps.plan.outputs.n != '0'
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-v1
+
+      - name: Stammbesucher aus dem Zwischenspeicher holen
+        if: steps.plan.outputs.n != '0'
+        uses: actions/cache@v6
+        with:
+          path: traffic/stammbesucher
+          key: stammbesucher-${{ github.run_id }}
+          restore-keys: stammbesucher-
+
+      - name: Playwright einrichten
+        if: steps.plan.outputs.n != '0'
+        run: |
+          pip install -q playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Besuche ausführen
+        if: steps.plan.outputs.n != '0'
+        run: |
+          if [ -n "${{ inputs.reise }}" ]; then
+            python traffic_engine.py --besuche ${{ steps.plan.outputs.n }} --reise "${{ inputs.reise }}"
+          else
+            python traffic_engine.py --besuche ${{ steps.plan.outputs.n }}
+          fi
