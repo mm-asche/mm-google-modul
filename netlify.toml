@@ -1,0 +1,11 @@
+# Netlify veröffentlicht den Ordner site/ direkt aus dem Repository.
+# Kein Build nötig: Die HTML-Seiten werden lokal mit werkzeuge/seiten_bauen.py erzeugt und mit eingecheckt.
+[build]
+  publish = "site"
+  command = ""
+
+# noindex zusätzlich als HTTP-Header (steht auch in site/_headers für Drag-and-drop-Uploads)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

@@ -1,0 +1,182 @@
+{
+  "url": "https://mm-google-modul.netlify.app",
+  "formulare_abfangen": true,
+  "mobil_anteil": 0.55,
+  "wiederkehr_anteil": 0.25,
+  "menue_selektor": "#nav-toggle",
+  "einwilligung": {"alle": "#consent-alle", "ablehnen": "#consent-ablehnen", "anteil_alle": 0.72, "anteil_ablehnen": 0.18},
+
+  "quellen": [
+    {"name": "google_suche_leistung", "gewicht": 30, "utm_source": "google", "utm_medium": "cpc", "utm_campaign": "suche_leistungen"},
+    {"name": "google_suche_marke", "gewicht": 8, "utm_source": "google", "utm_medium": "cpc", "utm_campaign": "suche_marke"},
+    {"name": "google_pmax", "gewicht": 10, "utm_source": "google", "utm_medium": "cpc", "utm_campaign": "pmax_shop"},
+    {"name": "meta", "gewicht": 12, "utm_source": "facebook", "utm_medium": "paid_social", "utm_campaign": "kuechen_herbst"},
+    {"name": "instagram", "gewicht": 8, "utm_source": "instagram", "utm_medium": "social", "utm_campaign": "werkstatt_einblicke"},
+    {"name": "newsletter", "gewicht": 8, "utm_source": "newsletter", "utm_medium": "email", "utm_campaign": "oktober"},
+    {"name": "google_business", "gewicht": 6, "utm_source": "google_business", "utm_medium": "organic", "utm_campaign": "gbp_website"},
+    {"name": "qr_flyer", "gewicht": 3, "utm_source": "qr-code", "utm_medium": "offline", "utm_campaign": "flyer_messe"},
+    {"name": "indeed", "gewicht": 6, "utm_source": "indeed", "utm_medium": "jobs", "utm_campaign": "recruiting_tischler"},
+    {"name": "instagram_recruiting", "gewicht": 5, "utm_source": "instagram", "utm_medium": "paid_social", "utm_campaign": "recruiting_azubi"},
+    {"name": "direkt", "gewicht": 25, "utm_source": null}
+  ],
+
+  "reisen": [
+    {"name": "absprung", "gewicht": 22,
+     "einstieg": [["/", 45], ["/leistungen/kuechen-nach-mass/", 20], ["/leistungen/treppen/", 10], ["/shop/", 10], ["/ratgeber/massivholz-oder-furnier/", 15]],
+     "schritte": [{"art": "lesen", "tiefe": [0.05, 0.35], "verweilen": [1, 5]}]},
+
+    {"name": "leistung_umsehen", "gewicht": 12,
+     "einstieg": "/",
+     "quellen": ["google_suche_marke", "google_business", "instagram", "direkt", "qr_flyer"],
+     "schritte": [
+       {"art": "lesen", "tiefe": [0.2, 0.5]},
+       {"art": "seite", "selektor": ["#teaser-kuechen", "#teaser-einbauschraenke", "#teaser-treppen", "#teaser-innentueren"], "zufall": true, "tiefe": [0.5, 1.0]},
+       {"art": "seite", "selektor": ["[id^='verwandt-']"], "zufall": true, "chance": 0.5, "optional": true}
+     ]},
+
+    {"name": "leistung_anruf", "gewicht": 10,
+     "einstieg": [["/leistungen/kuechen-nach-mass/", 35], ["/leistungen/einbauschraenke/", 25], ["/leistungen/treppen/", 25], ["/leistungen/innentueren/", 15]],
+     "quellen": ["google_suche_leistung", "google_business", "direkt"],
+     "schritte": [
+       {"art": "lesen", "tiefe": [0.3, 0.9]},
+       {"art": "klick", "selektor": ["#mobil-anrufen", "#cta-leistung-telefon", "#kopf-telefon"]}
+     ]},
+
+    {"name": "anfrage_komplett", "gewicht": 7,
+     "einstieg": [["/leistungen/kuechen-nach-mass/", 40], ["/leistungen/einbauschraenke/", 25], ["/leistungen/treppen/", 20], ["/leistungen/innentueren/", 15]],
+     "quellen": ["google_suche_leistung", "meta", "newsletter", "direkt"],
+     "schritte": [
+       {"art": "lesen", "tiefe": [0.6, 1.0]},
+       {"art": "seite", "selektor": ["#cta-leistung-anfrage", "#cta-leistung-anfrage-unten"], "lesen": false},
+       {"art": "formular_mehrstufig", "selektor": "#form-anfrage", "schritte": 3, "abbruch": {"1": 0.05, "2": 0.1, "3": 0.1}}
+     ]},
+
+    {"name": "anfrage_abbruch", "gewicht": 8,
+     "einstieg": [["/leistungen/kuechen-nach-mass/", 40], ["/leistungen/einbauschraenke/", 25], ["/leistungen/treppen/", 20], ["/", 15]],
+     "quellen": ["google_suche_leistung", "meta", "direkt"],
+     "schritte": [
+       {"art": "lesen", "tiefe": [0.4, 0.9]},
+       {"art": "seite", "selektor": ["#cta-leistung-anfrage", "#cta-hero-anfrage", "#mobil-anfrage"], "lesen": false},
+       {"art": "formular_mehrstufig", "selektor": "#form-anfrage", "schritte": 3, "abbruch": {"1": 0.3, "2": 0.45, "3": 0.8}}
+     ]},
+
+    {"name": "kontakt_formular", "gewicht": 5,
+     "einstieg": [["/", 60], ["/leistungen/", 40]],
+     "schritte": [
+       {"art": "lesen", "tiefe": [0.2, 0.6]},
+       {"art": "seite", "selektor": "#nav-kontakt", "tiefe": [0.2, 0.5]},
+       {"art": "formular_standard", "selektor": "#form-standard", "abbruch": 0.2}
+     ]},
+
+    {"name": "rueckruf_ajax", "gewicht": 4,
+     "einstieg": [["/", 50], ["/leistungen/treppen/", 25], ["/leistungen/kuechen-nach-mass/", 25]],
+     "schritte": [
+       {"art": "seite", "selektor": "#nav-kontakt", "tiefe": [0.2, 0.6]},
+       {"art": "formular_ajax", "selektor": "#form-ajax", "absenden": "#ajax-button", "erfolg_selektor": "#ajax-erfolg"}
+     ]},
+
+    {"name": "kontakt_klicks", "gewicht": 8,
+     "einstieg": [["/", 50], ["/kontakt/", 50]],
+     "quellen": ["google_suche_marke", "google_business", "direkt", "qr_flyer"],
+     "schritte": [
+       {"art": "seite", "selektor": "#nav-kontakt", "tiefe": [0.1, 0.4], "optional": true},
+       {"art": "klick", "selektor": ["#link-mail", "#link-whatsapp", "#link-telefon", "#link-preisliste", "#standort-maps-hamburg", "#standort-telefon-norderstedt"], "zufall": true}
+     ]},
+
+    {"name": "whitepaper", "gewicht": 6,
+     "einstieg": [["/ratgeber/kuechen-kosten/", 55], ["/leistungen/kuechen-nach-mass/", 30], ["/", 15]],
+     "quellen": ["meta", "newsletter", "google_suche_leistung", "direkt"],
+     "schritte": [
+       {"art": "seite", "selektor": ["#link-leistung-whitepaper", "#cta-start-whitepaper"], "optional": true, "lesen": false},
+       {"art": "lesen", "tiefe": [0.3, 0.8]},
+       {"art": "formular_standard", "selektor": "#form-whitepaper", "abbruch": 0.15},
+       {"art": "klick", "selektor": "#link-whitepaper", "chance": 0.85}
+     ]},
+
+    {"name": "ratgeber_lesen", "gewicht": 6,
+     "einstieg": [["/ratgeber/", 40], ["/ratgeber/massivholz-oder-furnier/", 35], ["/ratgeber/treppe-renovieren/", 25]],
+     "quellen": ["instagram", "newsletter", "direkt"],
+     "schritte": [
+       {"art": "seite", "selektor": ["#ratgeber-artikel-holz", "#ratgeber-artikel-treppe"], "zufall": true, "optional": true, "lesen": false},
+       {"art": "lesen", "tiefe": [0.7, 1.0], "verweilen": [8, 25]},
+       {"art": "seite", "selektor": ["#artikel-shop-oel", "#artikel-cta-leistung", "#artikel-cta-whitepaper"], "zufall": true, "chance": 0.4, "optional": true},
+       {"art": "klick", "selektor": ["#artikel-pflegeanleitung"], "chance": 0.3, "optional": true}
+     ]},
+
+    {"name": "shop_kauf", "gewicht": 6,
+     "einstieg": [["/shop/", 60], ["/", 20], ["/shop/hartwachs-oel/", 20]],
+     "quellen": ["google_pmax", "meta", "newsletter", "instagram", "direkt"],
+     "schritte": [
+       {"art": "seite", "selektor": [".js-produkt-link"], "zufall": true, "tiefe": [0.3, 0.8], "optional": true},
+       {"art": "klick", "selektor": "#produkt-in-warenkorb"},
+       {"art": "seite", "selektor": "#nav-shop", "chance": 0.4, "optional": true, "tiefe": [0.2, 0.6]},
+       {"art": "klick", "selektor": [".js-in-warenkorb"], "zufall": true, "chance": 0.4, "optional": true},
+       {"art": "seite", "selektor": "#kopf-warenkorb", "tiefe": [0.2, 0.5]},
+       {"art": "seite", "selektor": "#cta-zur-kasse", "lesen": false},
+       {"art": "formular_standard", "selektor": "#form-kasse", "abbruch": 0.12}
+     ]},
+
+    {"name": "shop_abbruch", "gewicht": 6,
+     "einstieg": [["/shop/", 70], ["/", 30]],
+     "quellen": ["google_pmax", "meta", "instagram", "direkt"],
+     "schritte": [
+       {"art": "seite", "selektor": "#nav-shop", "optional": true, "tiefe": [0.3, 0.8]},
+       {"art": "klick", "selektor": [".js-in-warenkorb"], "zufall": true},
+       {"art": "lesen", "tiefe": [0.4, 1.0]},
+       {"art": "seite", "selektor": "#kopf-warenkorb", "ende_chance": 0.35, "tiefe": [0.2, 0.5]},
+       {"art": "seite", "selektor": "#cta-zur-kasse", "ende_chance": 0.3, "lesen": false},
+       {"art": "lesen", "tiefe": [0.3, 0.7]}
+     ]},
+
+    {"name": "karriere_bewerbung", "gewicht": 4,
+     "einstieg": [["/karriere/", 60], ["/karriere/tischler-geselle/", 25], ["/karriere/ausbildung-tischler/", 15]],
+     "quellen": ["indeed", "instagram_recruiting", "direkt"],
+     "schritte": [
+       {"art": "seite", "selektor": [".stelle-karte"], "zufall": true, "optional": true, "tiefe": [0.4, 0.8]},
+       {"art": "lesen", "tiefe": [0.7, 1.0]},
+       {"art": "formular_standard", "selektor": "#form-bewerbung", "abbruch": 0.25}
+     ]},
+
+    {"name": "karriere_umsehen", "gewicht": 5,
+     "einstieg": [["/karriere/", 70], ["/", 30]],
+     "quellen": ["indeed", "instagram_recruiting", "instagram", "direkt"],
+     "schritte": [
+       {"art": "seite", "selektor": "#nav-karriere", "optional": true, "tiefe": [0.3, 0.7]},
+       {"art": "seite", "selektor": [".stelle-karte"], "zufall": true, "tiefe": [0.3, 0.9]},
+       {"art": "seite", "selektor": "#nav-ueber-uns", "chance": 0.4, "optional": true}
+     ]},
+
+    {"name": "ueber_uns_video", "gewicht": 3,
+     "einstieg": [["/", 60], ["/ueber-uns/", 40]],
+     "quellen": ["instagram", "instagram_recruiting", "direkt"],
+     "schritte": [
+       {"art": "seite", "selektor": "#nav-ueber-uns", "optional": true, "lesen": false},
+       {"art": "video", "selektor": "#video-ueber-uns iframe", "sekunden": [25, 70]},
+       {"art": "lesen", "tiefe": [0.6, 1.0]}
+     ]},
+
+    {"name": "mehrseiten_tour", "gewicht": 5,
+     "einstieg": "/",
+     "schritte": [
+       {"art": "lesen", "tiefe": [0.3, 0.7]},
+       {"art": "seite", "selektor": "#nav-leistungen", "tiefe": [0.3, 1.0]},
+       {"art": "seite", "selektor": ["#uebersicht-kuechen", "#uebersicht-einbauschraenke", "#uebersicht-treppen", "#uebersicht-innentueren"], "zufall": true},
+       {"art": "seite", "selektor": "#nav-ueber-uns", "chance": 0.6, "optional": true},
+       {"art": "seite", "selektor": "#nav-kontakt", "ende_chance": 0.3}
+     ]},
+
+    {"name": "kaputter_link", "gewicht": 1,
+     "einstieg": "/angebote-herbst-2025/",
+     "quellen": ["newsletter", "qr_flyer"],
+     "schritte": [
+       {"art": "warten", "sekunden": [3, 8]},
+       {"art": "seite", "selektor": "#fehler-start", "chance": 0.6}
+     ]}
+  ],
+
+  "zeitfenster": [
+    {"name": "vormittag", "von": 9, "bis": 12, "anzahl": [15, 20], "wochentage": ["mo", "di", "mi", "do", "fr"]},
+    {"name": "mittag", "von": 13, "bis": 15, "anzahl": [12, 18], "wochentage": ["mo", "di", "mi", "do", "fr"]},
+    {"name": "abend", "von": 18, "bis": 21, "anzahl": [8, 12]}
+  ]
+}
