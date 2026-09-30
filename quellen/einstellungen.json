@@ -1,0 +1,34 @@
+{
+  "_hinweis": "Nach jeder Änderung: python3 werkzeuge/seiten_bauen.py ausführen. Danach liegt die fertige Seite in site/.",
+
+  "gtm_id": "GTM-WC8QJDXB",
+  "search_console_meta": "",
+  "consent_modus": "eigener_banner",
+  "_consent_modus_optionen": "eigener_banner = eingebauter Banner mit Consent Mode V2 | cookiebot = Cookiebot-Skript (cookiebot_id nötig) | aus = kein Banner, kein Consent-Code",
+  "cookiebot_id": "",
+  "youtube_id": "hj0zx09EoEg",
+  "video_modus": "direkt",
+  "video_titel": "Wege im Handwerk » Tischler*in (Handwerkskammer Flensburg)",
+  "_video_modus_optionen": "direkt = YouTube-Video wird sofort eingebettet | nach_einwilligung = erst nach Marketing-Einwilligung oder Klick auf „Video laden“ (DSGVO-freundlicher, GTM muss dann nachgeladene Videos erkennen)",
+  "basis_url": "https://mm-google-modul.netlify.app",
+
+  "firma": {
+    "name": "Holzwerk Hanssen",
+    "zusatz": "Tischlerei & Innenausbau",
+    "rechtsform": "Holzwerk Hanssen GmbH",
+    "strasse": "Werkstattweg 14",
+    "plz": "22761",
+    "ort": "Hamburg",
+    "telefon": "040 66969 100",
+    "telefon_link": "+494066969100",
+    "whatsapp_link": "494066969100",
+    "email": "info@holzwerk-hanssen.example",
+    "email_bewerbung": "bewerbung@holzwerk-hanssen.example",
+    "email_shop": "shop@holzwerk-hanssen.example",
+    "oeffnungszeiten": "Mo–Do 7:00–16:30 Uhr · Fr 7:00–13:00 Uhr",
+    "gruendung": "1987",
+    "geschaeftsfuehrung": "Jan Hanssen, Merle Hanssen",
+    "instagram": "https://www.instagram.com/",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Hamburg+Bahrenfeld"
+  }
+}

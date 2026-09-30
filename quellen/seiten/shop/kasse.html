@@ -1,0 +1,58 @@
+<!--
+titel: Kasse | Holzwerk Hanssen
+beschreibung: Bestellung abschließen im Werkstatt-Shop von Holzwerk Hanssen.
+seitentyp: kasse
+koerperklasse: ohne-mobil-leiste
+inhaltsgruppe: Shop
+nav: shop
+skripte: shop
+sitemap: nein
+-->
+<div class="shop-hinweis">Demo-Shop: Es wird nichts verschickt und nichts berechnet. Bitte nur Testdaten eingeben.</div>
+<section class="wrap abschnitt">
+  <h1>Kasse</h1>
+  <div class="kasse-raster">
+    <form class="formular" id="form-kasse" name="kasse">
+      <fieldset class="gruppe">
+        <legend>Kontakt</legend>
+        <label>E-Mail <input id="kasse-email" type="email" name="email" required autocomplete="email"></label>
+        <label>Telefon (für Rückfragen) <input id="kasse-telefon" type="tel" name="telefon" autocomplete="tel"></label>
+      </fieldset>
+      <fieldset class="gruppe">
+        <legend>Lieferadresse</legend>
+        <div class="feld-reihe">
+          <label>Vorname <input id="kasse-vorname" type="text" name="vorname" required autocomplete="given-name"></label>
+          <label>Nachname <input id="kasse-nachname" type="text" name="nachname" required autocomplete="family-name"></label>
+        </div>
+        <label>Straße und Hausnummer <input id="kasse-strasse" type="text" name="strasse" required autocomplete="street-address"></label>
+        <div class="feld-reihe">
+          <label>PLZ <input id="kasse-plz" type="text" name="plz" required inputmode="numeric" autocomplete="postal-code"></label>
+          <label>Ort <input id="kasse-ort" type="text" name="ort" required autocomplete="address-level2"></label>
+        </div>
+      </fieldset>
+      <fieldset class="gruppe">
+        <legend>Versand</legend>
+        <label class="check"><input type="radio" name="versand" value="standard" checked> <span>Standardversand (2–4 Werktage)</span></label>
+        <label class="check"><input type="radio" name="versand" value="abholung"> <span>Abholung in Hamburg-Bahrenfeld (kostenlos)</span></label>
+      </fieldset>
+      <fieldset class="gruppe">
+        <legend>Zahlungsart</legend>
+        <label class="check"><input type="radio" name="zahlung" value="rechnung" checked> <span>Kauf auf Rechnung</span></label>
+        <label class="check"><input type="radio" name="zahlung" value="vorkasse"> <span>Vorkasse per Überweisung</span></label>
+        <label class="check"><input type="radio" name="zahlung" value="barzahlung"> <span>Barzahlung bei Abholung</span></label>
+      </fieldset>
+      <label class="check"><input id="kasse-agb" type="checkbox" name="agb" required> <span>Ich akzeptiere die (fiktiven) AGB und habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen.</span></label>
+      <button class="btn" id="kasse-absenden" type="submit">Zahlungspflichtig bestellen</button>
+    </form>
+    <aside class="kasse-uebersicht" aria-label="Bestellübersicht">
+      <h2>Ihre Bestellung</h2>
+      <ul id="kasse-positionen"></ul>
+      <div class="summen" style="margin:0;max-width:none">
+        <div><span>Zwischensumme</span><span id="kasse-zwischensumme"></span></div>
+        <div><span>Versand</span><span id="kasse-versand"></span></div>
+        <div class="gesamt"><span>Gesamt</span><span id="kasse-gesamt"></span></div>
+        <p class="klein">enthält 19 % MwSt.: <span id="kasse-mwst"></span></p>
+      </div>
+    </aside>
+  </div>
+</section>

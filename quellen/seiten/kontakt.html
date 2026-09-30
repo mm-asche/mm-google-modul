@@ -1,0 +1,108 @@
+<!--
+titel: Kontakt – Tischlerei Holzwerk Hanssen in Hamburg, Norderstedt & Ahrensburg
+beschreibung: So erreichen Sie Holzwerk Hanssen: Telefon, E-Mail, WhatsApp, Rückrufservice und Kontaktformular. Drei Standorte in Hamburg und Umgebung.
+seitentyp: kontakt
+inhaltsgruppe: Kontakt
+nav: kontakt
+-->
+<section class="seitenkopf">
+  <div class="wrap">
+    <span class="dachzeile">Kontakt</span>
+    <h1>Wir sind für Sie da</h1>
+    <p>Rufen Sie an, schreiben Sie uns oder lassen Sie sich zurückrufen. Anfragen beantworten wir in der Regel innerhalb eines Werktags.</p>
+  </div>
+</section>
+
+<section class="wrap abschnitt">
+  <div class="kontakt-wege">
+    <a class="kontakt-weg" id="link-telefon" href="tel:{{firma.telefon_link}}"><strong>{{firma.telefon}}</strong><small>{{firma.oeffnungszeiten}}</small></a>
+    <a class="kontakt-weg" id="link-mail" href="mailto:{{firma.email}}?subject=Anfrage%20%C3%BCber%20die%20Website"><strong>E-Mail schreiben</strong><small>{{firma.email}}</small></a>
+    <a class="kontakt-weg" id="link-whatsapp" href="https://wa.me/{{firma.whatsapp_link}}" target="_blank" rel="noopener"><strong>WhatsApp</strong><small>Fotos schicken, schnell Antwort bekommen</small></a>
+    <a class="kontakt-weg" id="link-preisliste" href="/downloads/preisliste-leistungen.pdf" download><strong>Preisübersicht (PDF)</strong><small>Richtpreise aller Leistungen</small></a>
+  </div>
+
+  <div class="zwei-spalten">
+    <div class="formular-box" id="formular-standard">
+      <h2>Nachricht senden</h2>
+      <p class="klein">Für konkrete Projekte nutzen Sie gern unsere <a id="link-kontakt-anfrage" href="/anfrage/">Projektanfrage</a> – dann haben wir gleich alle Angaben.</p>
+      <form class="formular" id="form-standard" name="kontakt" method="POST" action="/danke-anfrage/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="kontakt">
+        <p class="versteckt"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+        <div class="feld-reihe">
+          <label>Name <input id="kontakt-name" type="text" name="name" required autocomplete="name"></label>
+          <label>E-Mail <input id="kontakt-email" type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <div class="feld-reihe">
+          <label>Telefon (optional) <input id="kontakt-telefon" type="tel" name="telefon" autocomplete="tel"></label>
+          <label>Anliegen
+            <select id="kontakt-anliegen" name="anliegen">
+              <option value="allgemein">Allgemeine Frage</option>
+              <option value="kuechen">Küche</option>
+              <option value="einbauschraenke">Einbauschrank</option>
+              <option value="treppen">Treppe</option>
+              <option value="innentueren">Innentüren</option>
+              <option value="reparatur">Reparatur</option>
+              <option value="shop">Frage zum Shop</option>
+            </select>
+          </label>
+        </div>
+        <label>Sind Sie schon Kundin/Kunde bei uns?
+          <select id="kontakt-kundentyp" name="kundentyp">
+            <option value="neukunde">Nein, das erste Mal</option>
+            <option value="bestandskunde">Ja, wir hatten schon ein Projekt</option>
+          </select>
+        </label>
+        <label>Nachricht <textarea id="kontakt-nachricht" name="nachricht" rows="5" required></textarea></label>
+        <label class="check"><input id="kontakt-datenschutz" type="checkbox" name="datenschutz" required> <span>Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen.</span></label>
+        <button class="btn" id="kontakt-absenden" type="submit">Nachricht senden</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="formular-box" id="formular-ajax">
+        <h2>Rückruf anfordern</h2>
+        <p class="klein">Wir rufen Sie zur gewünschten Zeit zurück – kostenlos und unverbindlich.</p>
+        <!-- Nur für die Formularerkennung von Netlify. Wird nie angezeigt und nie abgeschickt. -->
+        <form name="rueckruf-ajax" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name"><input type="tel" name="telefon"><input type="text" name="uhrzeit"><input name="bot-field">
+        </form>
+        <!-- Das sichtbare Formular ist bewusst KEIN <form>: kein submit-Ereignis für GTM. -->
+        <div class="formular" id="form-ajax" role="form" aria-label="Rückruf anfordern">
+          <label>Name <input id="rueckruf-name" type="text" name="name" required autocomplete="name"></label>
+          <label>Telefon <input id="rueckruf-telefon" type="tel" name="telefon" required autocomplete="tel"></label>
+          <label>Beste Uhrzeit
+            <select id="rueckruf-uhrzeit" name="uhrzeit">
+              <option>Vormittags</option><option>Mittags</option><option>Nachmittags</option>
+            </select>
+          </label>
+          <button class="btn" type="button" id="ajax-button">Rückruf anfordern</button>
+        </div>
+        <div id="ajax-erfolg" class="meldung ok" role="status" hidden>Danke! Wir rufen Sie zur gewünschten Zeit zurück.</div>
+        <div id="ajax-fehler" class="meldung fehler" role="alert" hidden>Das hat leider nicht geklappt. Bitte versuchen Sie es später erneut oder rufen Sie uns an.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flaeche">
+  <div class="wrap">
+    <div class="abschnitt-kopf"><h2>Unsere Standorte</h2></div>
+    <div class="standorte">
+      <div class="standort">
+        <h3>Hamburg-Bahrenfeld</h3>
+        <p>Werkstatt &amp; Hauptsitz<br>Werkstattweg 14<br>22761 Hamburg</p>
+        <p><a id="standort-telefon-hamburg" href="tel:+494066969100">040 66969 100</a><br><a id="standort-maps-hamburg" href="https://www.google.com/maps/search/?api=1&amp;query=Hamburg+Bahrenfeld" target="_blank" rel="noopener">Route planen</a></p>
+      </div>
+      <div class="standort">
+        <h3>Norderstedt</h3>
+        <p>Niederlassung Nord<br>Am Sägewerk 3<br>22844 Norderstedt</p>
+        <p><a id="standort-telefon-norderstedt" href="tel:+494066969200">040 66969 200</a><br><a id="standort-maps-norderstedt" href="https://www.google.com/maps/search/?api=1&amp;query=Norderstedt" target="_blank" rel="noopener">Route planen</a></p>
+      </div>
+      <div class="standort">
+        <h3>Ahrensburg</h3>
+        <p>Ausstellung Ost · Termine nach Vereinbarung<br>Hobelweg 7<br>22926 Ahrensburg</p>
+        <p><a id="standort-telefon-ahrensburg" href="tel:+494066969300">040 66969 300</a><br><a id="standort-maps-ahrensburg" href="https://www.google.com/maps/search/?api=1&amp;query=Ahrensburg" target="_blank" rel="noopener">Route planen</a></p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+{
+  "_hinweis": "Stellenanzeigen. Jede Stelle bekommt die Seite /karriere/<slug>/ mit Kurzbewerbung.",
+  "stellen": [
+    {
+      "slug": "tischler-geselle",
+      "titel": "Tischler/in (m/w/d) in Vollzeit",
+      "kurztitel": "Tischler/in",
+      "art": "Vollzeit · unbefristet",
+      "ort": "Hamburg-Bahrenfeld",
+      "bild": "werkstatt-1.jpg",
+      "einleitung": "Sie haben Ihre Gesellenprüfung in der Tasche und wollen an Projekten arbeiten, bei denen man am Ende sieht, was man geschaffen hat? Wir suchen Verstärkung für unsere Werkstatt: Küchen, Einbauschränke und Treppen, von der CNC bis zur Endmontage.",
+      "aufgaben": ["Fertigung von Küchen, Einbaumöbeln und Treppen nach Zeichnung", "Arbeit an Formatkreissäge, Kantenanleimmaschine und CNC", "Oberflächenbehandlung mit Öl und Lack", "Endmontage beim Kunden im Zweierteam"],
+      "profil": ["Abgeschlossene Ausbildung als Tischler/in oder Schreiner/in", "Sorgfalt und Freude an sauberen Details", "Führerschein Klasse B", "Erste CNC-Erfahrung ist schön, aber kein Muss"],
+      "vorteile": ["Übertarifliche Bezahlung und 30 Tage Urlaub", "Freitags um 13 Uhr Feierabend", "Moderne Werkstatt mit Absaugung und Hebehilfen", "HVV-ProfiTicket und E-Bike-Leasing", "Weiterbildung zum Meister wird unterstützt"],
+      "kontakt": "Deniz Kaya, Werkstattleitung"
+    },
+    {
+      "slug": "ausbildung-tischler",
+      "titel": "Ausbildung zur/zum Tischler/in (m/w/d) ab August",
+      "kurztitel": "Ausbildung Tischler/in",
+      "art": "Ausbildung · 3 Jahre",
+      "ort": "Hamburg-Bahrenfeld",
+      "bild": "karriere-azubi.jpg",
+      "einleitung": "Holz riecht gut, fühlt sich gut an und hält ein Leben lang. In drei Jahren lernen Sie bei uns alles, was ein Tischler können muss: vom Handhobel bis zur CNC-Programmierung. Jedes Jahr übernehmen wir unsere Azubis.",
+      "aufgaben": ["Holz- und Plattenwerkstoffe kennenlernen und bearbeiten", "Eigene Werkstücke vom Entwurf bis zum Finish", "Mitarbeit bei Montagen beim Kunden", "Gesellenstück mit eigener Idee"],
+      "profil": ["Mittlerer Schulabschluss oder guter ESA", "Handwerkliches Geschick und räumliches Denken", "Zuverlässigkeit und Teamgeist", "Ein Praktikum bei uns vorab ist ausdrücklich erwünscht"],
+      "vorteile": ["Ausbildungsvergütung über Tarif", "Feste Ansprechpartnerin für alle Azubis", "Eigene Werkzeugkiste zum Start", "Übernahmegarantie bei gutem Abschluss", "Azubi-Projekt: ein Möbelstück für einen guten Zweck"],
+      "kontakt": "Merle Hanssen, Ausbildungsleitung"
+    },
+    {
+      "slug": "kuechenmonteur",
+      "titel": "Küchen- und Möbelmonteur/in (m/w/d)",
+      "kurztitel": "Monteur/in Küche & Möbel",
+      "art": "Vollzeit · unbefristet",
+      "ort": "Hamburg und Umland",
+      "bild": "karriere-montage.jpg",
+      "einleitung": "Sie sind die Visitenkarte unseres Betriebs: Sie bauen beim Kunden auf, was in der Werkstatt entstanden ist. Dafür suchen wir Menschen mit Montageerfahrung, ruhiger Hand und freundlichem Auftreten.",
+      "aufgaben": ["Montage von Küchen, Einbauschränken und Innentüren", "Anschluss von Elektrogeräten (nach Einweisung)", "Aufmaß vor Ort gemeinsam mit der Planung", "Übergabe an die Kundinnen und Kunden"],
+      "profil": ["Ausbildung im Holz- oder Montagebereich oder vergleichbare Erfahrung", "Führerschein Klasse B, gern BE", "Freundliches, sauberes Auftreten", "Gute Deutschkenntnisse"],
+      "vorteile": ["Eigener, voll ausgestatteter Montagewagen", "Keine Übernachtungen, Einsatzgebiet max. 60 km", "Montagezulage und pünktliche Bezahlung", "Feste Teams statt ständig wechselnder Partner"],
+      "kontakt": "Deniz Kaya, Werkstattleitung"
+    }
+  ]
+}

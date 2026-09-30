@@ -1,0 +1,70 @@
+{
+  "_hinweis": "Shop-Sortiment. Preise brutto in Euro inkl. 19 % MwSt. slug = Adresse der Produktseite unter /shop/<slug>/.",
+  "versand": {"standard": 4.90, "kostenlos_ab": 49.00, "abholung": 0.00},
+  "produkte": [
+    {
+      "id": "HH-LEIM-750", "slug": "holzleim-d3", "name": "Holzleim D3 wasserfest, 750 g",
+      "kategorie": "Leime & Kleber", "preis": 12.90, "bild": "shop-holzleim.jpg",
+      "kurz": "Unser Werkstattleim für Küche, Bad und Außenbereich unter Dach.",
+      "text": "Den D3-Leim verwenden wir selbst täglich in der Werkstatt. Er bindet schnell ab, trocknet transparent und ist nach DIN EN 204 wasserfest. Ideal für Reparaturen an Stühlen, Schubladen und Arbeitsplatten-Kanten.",
+      "merkmale": ["Wasserfest nach D3", "Offene Zeit ca. 8 Minuten", "Trocknet transparent", "Lösemittelfrei"]
+    },
+    {
+      "id": "HH-OEL-500", "slug": "hartwachs-oel", "name": "Hartwachs-Öl farblos, 0,5 l",
+      "kategorie": "Oberflächenpflege", "preis": 24.90, "bild": "shop-moebeloel.jpg",
+      "kurz": "Für Tischplatten, Arbeitsplatten und Massivholzmöbel.",
+      "text": "Mit diesem Öl behandeln wir unsere Massivholz-Arbeitsplatten ab Werk. Es feuert die Maserung an, bleibt offenporig und lässt sich jederzeit partiell ausbessern. Reicht für ca. 12 m² je Auftrag.",
+      "merkmale": ["Für Innenräume", "Speichelfest nach DIN 53160", "Ergiebig: ca. 12 m²", "Seidenmatte Oberfläche"]
+    },
+    {
+      "id": "HH-WACHS-250", "slug": "moebelwachs", "name": "Möbelwachs mit Bienenwachs, 250 ml",
+      "kategorie": "Oberflächenpflege", "preis": 14.50, "bild": "shop-holzwachs.jpg",
+      "kurz": "Auffrischung für geölte und gewachste Oberflächen.",
+      "text": "Ein- bis zweimal im Jahr aufgetragen, schützt das Wachs Ihre Möbel vor Flecken und gibt ihnen einen sanften Glanz. Mit Baumwolltuch dünn auftragen, kurz einziehen lassen, auspolieren.",
+      "merkmale": ["Natürliches Bienenwachs", "Für Möbel und Türen", "Einfach aufzutragen", "Angenehmer Duft"]
+    },
+    {
+      "id": "HH-SCHLEIF-25", "slug": "schleifpapier-set", "name": "Schleifpapier-Set K80–K240, 25 Blatt",
+      "kategorie": "Schleifen", "preis": 9.90, "bild": "shop-schleifpapier.jpg",
+      "kurz": "Fünf Körnungen für Vor- und Feinschliff.",
+      "text": "Je fünf Blatt in den Körnungen 80, 120, 150, 180 und 240. Unsere Empfehlung für kleine Reparaturen und das Nachschleifen vor dem Ölen.",
+      "merkmale": ["Format 230 × 280 mm", "Zuschneidbar", "Für Hand- und Maschinenschliff", "Korund-Qualität"]
+    },
+    {
+      "id": "HH-GRIFF-128", "slug": "moebelgriff-eiche", "name": "Möbelgriff Eiche massiv, 128 mm, 2 Stück",
+      "kategorie": "Beschläge", "preis": 18.00, "bild": "shop-moebelgriffe.jpg",
+      "kurz": "Handgefertigt in unserer Werkstatt, geölt.",
+      "text": "Diese Griffe fertigen wir aus Reststücken unserer Küchenprojekte. Lochabstand 128 mm, Schrauben liegen bei. Jeder Griff ist ein Unikat in Farbe und Maserung.",
+      "merkmale": ["Eiche massiv", "Lochabstand 128 mm", "Inkl. Schrauben", "Aus eigener Fertigung"]
+    },
+    {
+      "id": "HH-FILZ-48", "slug": "filzgleiter-set", "name": "Filzgleiter-Set, 48-teilig",
+      "kategorie": "Zubehör", "preis": 6.90, "bild": "shop-filzgleiter.jpg",
+      "kurz": "Schützt Parkett und Dielen vor Kratzern.",
+      "text": "Selbstklebende Filzgleiter in drei Größen für Stühle, Tische und Regale. Gerade nach dem Einbau neuer Möbel eine günstige Versicherung für Ihren Boden.",
+      "merkmale": ["3 Größen", "Selbstklebend", "5 mm Filzstärke", "Für alle Hartböden"]
+    },
+    {
+      "id": "HH-SCHARNIER-2", "slug": "topfscharnier-daempfung", "name": "Topfscharnier mit Dämpfung, 2 Stück",
+      "kategorie": "Beschläge", "preis": 11.40, "bild": "shop-scharniere.jpg",
+      "kurz": "Ersatz für Küchen- und Schranktüren, 35 mm Topf.",
+      "text": "Das gleiche Scharnier, das wir in unseren Küchen und Einbauschränken verbauen. Mit integrierter Dämpfung für leises Schließen, dreidimensional einstellbar.",
+      "merkmale": ["35 mm Topf", "Öffnungswinkel 110°", "Soft-Close integriert", "Inkl. Montageplatte"]
+    },
+    {
+      "id": "HH-PFLEGE-SET", "slug": "holzpflege-set", "name": "Holzpflege-Set (Öl, Tuch, Pad)",
+      "kategorie": "Oberflächenpflege", "preis": 39.00, "bild": "shop-pflegeset.jpg",
+      "kurz": "Alles für die jährliche Pflege Ihrer Massivholzmöbel.",
+      "text": "Hartwachs-Öl 250 ml, Baumwoll-Poliertuch, Schleifpad fein und unsere bebilderte Pflegeanleitung in einer Box. Beliebt als Geschenk zum Einzug.",
+      "merkmale": ["Hartwachs-Öl 250 ml", "Poliertuch und Schleifpad", "Pflegeanleitung", "Geschenkbox"]
+    },
+    {
+      "id": "HH-GUTSCHEIN-50", "slug": "werkstatt-gutschein", "name": "Werkstatt-Gutschein 50 €",
+      "kategorie": "Gutscheine", "preis": 50.00, "bild": "shop-gutschein.jpg",
+      "kurz": "Einlösbar für Shop, Reparaturen oder unseren Holzkurs.",
+      "text": "Der Gutschein wird Ihnen per E-Mail als PDF zugeschickt und ist drei Jahre gültig. Einlösbar im Shop, für Reparaturaufträge oder für einen Platz in unserem Samstags-Holzkurs.",
+      "merkmale": ["Versand per E-Mail", "3 Jahre gültig", "Frei kombinierbar", "Kein Versand nötig"],
+      "digital": true
+    }
+  ]
+}

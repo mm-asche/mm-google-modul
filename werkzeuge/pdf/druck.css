@@ -1,0 +1,41 @@
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; color: #2c2a26; font-size: 10.5pt; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.seite { width: 210mm; height: 297mm; padding: 22mm 20mm 20mm; position: relative; page-break-after: always; overflow: hidden; }
+.seite:last-child { page-break-after: auto; }
+h1, h2, h3 { font-family: Palatino, "Book Antiqua", Georgia, serif; color: #172520; line-height: 1.2; font-weight: 600; }
+h1 { font-size: 30pt; margin: 0 0 8mm; }
+h2 { font-size: 19pt; margin: 0 0 5mm; }
+h3 { font-size: 12.5pt; margin: 6mm 0 2mm; }
+p { margin: 0 0 3.5mm; }
+.dach { font-size: 8pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #b9854f; margin-bottom: 3mm; }
+.fuss { position: absolute; left: 20mm; right: 20mm; bottom: 10mm; display: flex; justify-content: space-between; font-size: 8pt; color: #8f887a; border-top: .3mm solid #e3dccf; padding-top: 3mm; }
+.cover { background: #172520 center/cover; color: #fff; padding: 0; }
+.cover::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23,37,32,.25) 0%, rgba(23,37,32,.92) 70%); }
+.cover-inhalt { position: absolute; left: 20mm; right: 20mm; bottom: 28mm; }
+.cover h1 { color: #fff; font-size: 38pt; }
+.cover p { color: #e9d8c1; font-size: 13pt; max-width: 140mm; }
+.cover .logo { position: absolute; top: 20mm; left: 20mm; display: flex; gap: 4mm; align-items: center; color: #fff; font-family: Palatino, Georgia, serif; font-size: 14pt; }
+.cover .logo small { display: block; font-family: Arial, sans-serif; font-size: 8pt; color: #e9d8c1; }
+.logo svg { width: 13mm; height: 13mm; }
+table { width: 100%; border-collapse: collapse; margin: 3mm 0 6mm; font-size: 9.5pt; }
+th, td { text-align: left; padding: 2.4mm 2mm; border-bottom: .3mm solid #e3dccf; vertical-align: top; }
+th { background: #f7f3ec; font-weight: 700; }
+td.zahl, th.zahl { text-align: right; white-space: nowrap; }
+tr.summe td { font-weight: 700; border-top: .5mm solid #23372d; }
+.box { background: #f7f3ec; border-left: 1.2mm solid #b9854f; padding: 4mm 5mm; margin: 5mm 0; border-radius: 0 2mm 2mm 0; }
+.zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+.bild { width: 100%; height: 62mm; object-fit: cover; border-radius: 2mm; margin: 2mm 0 5mm; }
+ul { margin: 0 0 4mm; padding-left: 5mm; }
+li { margin-bottom: 1.6mm; }
+.check li { list-style: none; position: relative; padding-left: 7mm; margin-left: -5mm; }
+.check li::before { content: ""; position: absolute; left: 0; top: .6mm; width: 3.6mm; height: 3.6mm; border: .45mm solid #23372d; border-radius: .6mm; }
+.balken { display: flex; height: 9mm; border-radius: 1.5mm; overflow: hidden; margin: 3mm 0 2mm; font-size: 7.5pt; color: #fff; font-weight: 700; }
+.balken span { display: flex; align-items: center; justify-content: center; }
+.legende { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; font-size: 8pt; color: #6b655b; margin-bottom: 6mm; }
+.gross-zahl { font-family: Palatino, Georgia, serif; font-size: 24pt; color: #23372d; }
+.rueck { background: #23372d; color: #e8e3d8; }
+.rueck h2 { color: #fff; }
+.rueck a { color: #e9d8c1; }
+.klein { font-size: 8.5pt; color: #6b655b; }

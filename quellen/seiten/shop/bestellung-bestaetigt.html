@@ -1,0 +1,26 @@
+<!--
+titel: Bestellung bestätigt | Holzwerk Hanssen
+beschreibung: Vielen Dank für Ihre Bestellung.
+seitentyp: bestellbestaetigung
+inhaltsgruppe: Shop
+nav: shop
+skripte: shop
+sitemap: nein
+-->
+<section class="wrap abschnitt schmal">
+  <div id="bestellung-bestaetigt" hidden>
+    <span class="dachzeile">Bestellung eingegangen</span>
+    <h1>Vielen Dank für Ihre Bestellung!</h1>
+    <p class="einleitung">Ihre Bestellnummer: <strong id="bestellnummer"></strong><br>Gesamtbetrag: <strong id="bestellsumme"></strong></p>
+    <p>Eine Bestätigung geht an <span id="bestell-email"></span>. <em>(Demo: Es wird keine E-Mail verschickt.)</em></p>
+    <div class="knopfzeile">
+      <a class="btn" id="bestellung-weiter" href="/shop/">Weiter einkaufen</a>
+      <a class="btn btn-zweit" id="bestellung-ratgeber" href="/ratgeber/">Zum Ratgeber</a>
+    </div>
+  </div>
+  <div id="bestellung-keine" hidden>
+    <h1>Keine offene Bestellung</h1>
+    <p>Diese Seite zeigt die Bestätigung direkt nach einer Bestellung. Eine erneute Kaufmeldung wird nicht ausgelöst.</p>
+    <a class="btn" id="bestellung-zum-shop" href="/shop/">Zum Shop</a>
+  </div>
+</section>

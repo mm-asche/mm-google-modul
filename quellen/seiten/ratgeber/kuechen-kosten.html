@@ -1,0 +1,48 @@
+<!--
+titel: Ratgeber: Was kostet eine Küche nach Maß? Kostenloser Download | Holzwerk Hanssen
+beschreibung: Kostenloser Ratgeber als PDF: Wie sich der Preis einer Maßküche zusammensetzt, drei Beispielküchen mit Preisen, Spartipps und Checkliste.
+seitentyp: whitepaper
+inhaltsgruppe: Ratgeber
+leistung: kuechen
+nav: ratgeber
+-->
+<nav class="brotkrumen wrap" aria-label="Brotkrumen"><a href="/">Start</a> › <a href="/ratgeber/">Ratgeber</a> › <span>Was kostet eine Küche nach Maß?</span></nav>
+<section class="wrap abschnitt">
+  <div class="zwei-spalten">
+    <div>
+      <span class="dachzeile">Kostenloser Ratgeber · PDF, 8 Seiten</span>
+      <h1>Was kostet eine Küche nach Maß?</h1>
+      <p class="einleitung">„Was kostet so etwas ungefähr?“ ist die häufigste Frage in unserer Ausstellung. Unser Ratgeber beantwortet sie ehrlich – mit echten Zahlen aus über 400 Küchenprojekten.</p>
+      <h2>Das erfahren Sie im Ratgeber</h2>
+      <ul class="haken">
+        <li>Aus welchen fünf Bausteinen sich der Küchenpreis zusammensetzt</li>
+        <li>Drei Beispielküchen – von der Zeile bis zur Kochinsel – mit Preisen</li>
+        <li>Wo Sparen sinnvoll ist und wo es sich später rächt</li>
+        <li>Maßküche vs. Möbelhausküche: ein fairer Vergleich</li>
+        <li>Checkliste: Diese Fragen sollten Sie jedem Küchenplaner stellen</li>
+      </ul>
+      <img class="rund" src="/assets/bilder/ratgeber-planung.jpg" alt="Küchenplanung mit Skizzen" loading="lazy" style="margin-top:28px">
+    </div>
+    <div class="formular-box">
+      <h2>Ratgeber kostenlos anfordern</h2>
+      <p class="klein">Nach dem Absenden können Sie das PDF sofort herunterladen.</p>
+      <form class="formular" id="form-whitepaper" name="whitepaper" method="POST" action="/danke-whitepaper/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="whitepaper">
+        <input type="hidden" name="dokument" value="ratgeber-kuechenkosten">
+        <p class="versteckt"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+        <label>Vorname <input id="whitepaper-vorname" type="text" name="vorname" required autocomplete="given-name"></label>
+        <label>E-Mail <input id="whitepaper-email" type="email" name="email" required autocomplete="email"></label>
+        <label>Wie weit ist Ihre Planung?
+          <select id="whitepaper-phase" name="planungsphase">
+            <option value="information">Ich informiere mich erst</option>
+            <option value="konkret">Wir planen konkret</option>
+            <option value="vergleich">Ich vergleiche Angebote</option>
+          </select>
+        </label>
+        <label class="check"><input id="whitepaper-newsletter" type="checkbox" name="newsletter" value="ja"> <span>Ja, ich möchte gelegentlich Tipps und Angebote per E-Mail erhalten (jederzeit abbestellbar).</span></label>
+        <label class="check"><input id="whitepaper-datenschutz" type="checkbox" name="datenschutz" required> <span>Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen.</span></label>
+        <button class="btn" id="whitepaper-absenden" type="submit">Jetzt herunterladen</button>
+      </form>
+    </div>
+  </div>
+</section>

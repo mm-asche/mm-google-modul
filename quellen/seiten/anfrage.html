@@ -1,0 +1,87 @@
+<!--
+titel: Angebot anfragen – in 3 Schritten zum Festpreis | Holzwerk Hanssen
+beschreibung: Beschreiben Sie Ihr Projekt in drei kurzen Schritten. Wir melden uns innerhalb eines Werktags und vereinbaren ein kostenloses Aufmaß.
+seitentyp: anfrage
+inhaltsgruppe: Conversion
+skripte: anfrage
+koerperklasse: ohne-mobil-leiste
+-->
+<section class="seitenkopf" id="anfrage-kopf">
+  <div class="wrap schmal">
+    <span class="dachzeile">Projektanfrage</span>
+    <h1>In 3 Schritten zu Ihrem Angebot</h1>
+    <p>Dauert etwa zwei Minuten. Kostenlos und unverbindlich – wir melden uns innerhalb eines Werktags.</p>
+  </div>
+</section>
+
+<section class="wrap abschnitt schmal">
+  <ol class="schritte-anzeige" aria-label="Fortschritt">
+    <li class="aktiv">1 · Vorhaben</li>
+    <li>2 · Details</li>
+    <li>3 · Kontakt</li>
+  </ol>
+
+  <form class="formular formular-box" id="form-anfrage" name="projekt-anfrage" method="POST" action="/danke-anfrage/" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="projekt-anfrage">
+    <p class="versteckt"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+
+    <div data-schritt="1">
+      <fieldset class="auswahl-kacheln">
+        <legend>Was dürfen wir für Sie bauen?</legend>
+        <label class="kachel"><input type="radio" name="leistung" value="kuechen" required><span>Küche</span></label>
+        <label class="kachel"><input type="radio" name="leistung" value="einbauschraenke"><span>Einbauschrank</span></label>
+        <label class="kachel"><input type="radio" name="leistung" value="treppen"><span>Treppe</span></label>
+        <label class="kachel"><input type="radio" name="leistung" value="innentueren"><span>Innentüren</span></label>
+        <label class="kachel"><input type="radio" name="leistung" value="sonstiges"><span>Etwas anderes</span></label>
+      </fieldset>
+      <div class="schritt-nav"><span></span><button class="btn" type="button" id="anfrage-weiter-1" data-weiter>Weiter</button></div>
+    </div>
+
+    <div data-schritt="2" hidden>
+      <label>Kurz beschrieben: Worum geht es?
+        <textarea id="anfrage-beschreibung" name="beschreibung" rows="4" placeholder="z. B. L-Küche für eine Altbauwohnung, ca. 7 m, Arbeitsplatte aus Eiche"></textarea>
+      </label>
+      <div class="feld-reihe">
+        <label>Budgetrahmen
+          <select id="anfrage-budget" name="budget" required>
+            <option value="">Bitte wählen</option>
+            <option value="bis-5000">bis 5.000 €</option>
+            <option value="5000-15000">5.000 – 15.000 €</option>
+            <option value="15000-30000">15.000 – 30.000 €</option>
+            <option value="ueber-30000">über 30.000 €</option>
+            <option value="offen">noch offen</option>
+          </select>
+        </label>
+        <label>Wann soll es losgehen?
+          <select id="anfrage-zeitraum" name="zeitraum" required>
+            <option value="">Bitte wählen</option>
+            <option value="sofort">so bald wie möglich</option>
+            <option value="3-monate">in den nächsten 3 Monaten</option>
+            <option value="6-monate">in 3 bis 6 Monaten</option>
+            <option value="spaeter">später / nur Information</option>
+          </select>
+        </label>
+      </div>
+      <label>Postleitzahl des Objekts <input id="anfrage-plz" type="text" name="plz" inputmode="numeric" pattern="[0-9]{5}" required autocomplete="postal-code"></label>
+      <div class="schritt-nav"><button class="btn btn-zweit" type="button" id="anfrage-zurueck-2" data-zurueck>Zurück</button><button class="btn" type="button" id="anfrage-weiter-2" data-weiter>Weiter</button></div>
+    </div>
+
+    <div data-schritt="3" hidden>
+      <div class="feld-reihe">
+        <label>Vor- und Nachname <input id="anfrage-name" type="text" name="name" required autocomplete="name"></label>
+        <label>Telefon <input id="anfrage-telefon" type="tel" name="telefon" required autocomplete="tel"></label>
+      </div>
+      <label>E-Mail <input id="anfrage-email" type="email" name="email" required autocomplete="email"></label>
+      <label>Anfrage als
+        <select id="anfrage-kundentyp" name="kundentyp">
+          <option value="privat">Privatperson</option>
+          <option value="gewerbe">Gewerbe / Hausverwaltung</option>
+          <option value="architekt">Architekturbüro</option>
+        </select>
+      </label>
+      <label class="check"><input id="anfrage-datenschutz" type="checkbox" name="datenschutz" required> <span>Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen und bin einverstanden, dass Holzwerk Hanssen mich zu meiner Anfrage kontaktiert.</span></label>
+      <div class="schritt-nav"><button class="btn btn-zweit" type="button" id="anfrage-zurueck-3" data-zurueck>Zurück</button><button class="btn" type="submit" id="anfrage-absenden">Anfrage absenden</button></div>
+    </div>
+  </form>
+  <p class="klein" style="margin-top:18px">Lieber persönlich? Rufen Sie uns an: <a id="anfrage-telefon-link" href="tel:{{firma.telefon_link}}">{{firma.telefon}}</a></p>
+</section>

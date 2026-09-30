@@ -1,0 +1,32 @@
+<!--
+titel: Warenkorb | Holzwerk Hanssen
+beschreibung: Ihr Warenkorb im Werkstatt-Shop von Holzwerk Hanssen.
+seitentyp: warenkorb
+inhaltsgruppe: Shop
+nav: shop
+skripte: shop
+sitemap: nein
+-->
+<section class="wrap abschnitt">
+  <h1>Warenkorb</h1>
+  <div id="warenkorb-leer" hidden>
+    <p>Ihr Warenkorb ist leer.</p>
+    <a class="btn" id="warenkorb-zum-shop" href="/shop/">Zum Shop</a>
+  </div>
+  <div id="warenkorb-voll" hidden>
+    <table class="korb-tabelle">
+      <thead><tr><th>Produkt</th><th>Preis</th><th>Menge</th><th>Summe</th><th></th></tr></thead>
+      <tbody id="warenkorb-inhalt"></tbody>
+    </table>
+    <div class="summen">
+      <div><span>Zwischensumme</span><span id="korb-zwischensumme"></span></div>
+      <div><span>Versand (Standard)</span><span id="korb-versand"></span></div>
+      <div class="gesamt"><span>Gesamt inkl. MwSt.</span><span id="korb-gesamt"></span></div>
+      <p class="klein" id="korb-versandhinweis"></p>
+      <div class="knopfzeile" style="justify-content:flex-end">
+        <a class="btn btn-zweit" id="warenkorb-weiter-einkaufen" href="/shop/">Weiter einkaufen</a>
+        <a class="btn" id="cta-zur-kasse" href="/shop/kasse/">Zur Kasse</a>
+      </div>
+    </div>
+  </div>
+</section>
